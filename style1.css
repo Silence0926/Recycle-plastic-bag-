@@ -434,3 +434,22 @@ main {
 .add-to-cart:active {
     transform: scale(0.95);
 }
+/* 让背景铺满整个 intro 页面 */
+.intro-page {
+    background: url('recycling.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white; /* 让文字更清晰 */
+}
+
+/* 介绍内容 */
+.intro-content {
+    text-align: center;
+    font-size: 20px;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 100px auto;
+    background: rgba(0, 0, 0, 0.6); /* 透明黑色背景，让文字更清晰 */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.5);
+}
