@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHECKOUT</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+    <img src="R.jpg" alt="Vongola Emblem" class="logo-img">
+    <span class="logo-text">RPB</span>
+</div>
+        <nav>
+            <a href="index.html">HOME</a>
+            <a href="cart.html">CART</a>
+            <a href="intro.html">INTRO</a>
+        </nav>
+        <input type="text" id="search" placeholder="SEARCH">
+    </header>
+
+    <main>
+        <h1>CHECKOUT</h1>
+
+        <!-- 显示总金额 -->
+        <h2>Total Amount: RM <span id="checkout-total-price">0.00</span></h2>
+
+        <!-- 显示付款二维码 -->
+        <div class="payment-section">
+            <h3>SCAN TO PAY</h3>
+            <img src="tngqr.jpg" alt="TNG Payment QR Code" id="payment-qr">
+        </div>
+
+        <!-- 上传支付截图 -->
+        <div class="upload-section">
+            <h3>UPLOAD PAYMENT SCREENSHOT</h3>
+            <input type="file" id="payment-proof" accept="image/*">
+        </div>
+
+        <!-- 确认支付按钮 -->
+        <button id="confirm-payment">CONFIRM PAYMENT</button>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 电子商店. 保留所有权利.</p>
+    </footer>
+
+    <script>
+        // 读取购物车总价
+        document.getElementById("checkout-total-price").innerText = localStorage.getItem("total-price") || "0.00";
+
+        document.getElementById("confirm-payment").addEventListener("click", function() {
+            let paymentProof = document.getElementById("payment-proof").files.length;
+            if (paymentProof === 0) {
+                alert("Please upload the payment screenshot!");
+            } else {
+                alert("Payment confirmed! Redirecting...");
+                localStorage.removeItem("cart"); // 清空购物车
+                localStorage.removeItem("total-price"); // 清空总价
+                window.location.href = "success.html"; // 跳转到成功页面
+            }
+        });
+    </script>
+</body>
+</html>
