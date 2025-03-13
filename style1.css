@@ -1,0 +1,436 @@
+/* ========== 首页（Home） ========== */
+
+/* 标题优化 */
+h1 {
+    text-align: center; /* 居中 */
+    font-family: "Poppins", "Montserrat", sans-serif; /* 更现代的字体 */
+    font-size: 3rem;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); /* 文字阴影 */
+}
+
+/* 商品卡片居中 */
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* 居中 */
+    gap: 20px; /* 间距 */
+}
+
+/* 商品卡片优化 */
+.product-card {
+    border-radius: 10px; /* 圆角 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 阴影 */
+    transition: transform 0.3s ease-in-out;
+}
+
+.product-card:hover {
+    transform: scale(1.05); /* 悬停放大 */
+}
+
+/* 商品名称优化 */
+.product-card .product-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* 商品价格优化 */
+.product-card .product-price {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* 按钮优化 */
+.button {
+    background: linear-gradient(90deg, #007bff, #0056b3); /* 渐变蓝色 */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.button:hover {
+    background: linear-gradient(90deg, #0056b3, #003580);
+    transform: scale(1.05);
+}
+
+.button:active {
+    transform: scale(0.95);
+}
+
+/* 搜索框优化 */
+.search-box {
+    border-radius: 25px;
+    padding: 10px;
+    width: 250px;
+    transition: border-color 0.3s ease;
+}
+
+.search-box:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* ========== LOGO ========== */
+
+/* Logo 文字 */
+.logo {
+    font-size: 2.5rem;
+    font-family: "Vongola", sans-serif;
+    background: linear-gradient(45deg, gold, orange, gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gold-shine 2s infinite;
+}
+
+/* Vongola Logo 金色闪耀动画 */
+@keyframes gold-shine {
+    0% { text-shadow: 0 0 10px gold; }
+    50% { text-shadow: 0 0 20px orange; }
+    100% { text-shadow: 0 0 10px gold; }
+}
+
+/* Logo 图片 */
+.logo-img {
+    height: 50px;
+    width: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+.logo-img:hover {
+    transform: scale(1.1);
+}
+
+
+
+/* ========== 购物车（Cart） ========== */
+
+/* 购物车项样式 */
+.cart-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.cart-item img {
+    width: 80px;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* 删除动画（JS 需要控制 opacity） */
+.cart-item.removing {
+    opacity: 0;
+    transform: translateX(-20px);
+}
+
+/* 总价优化 */
+.total-price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: black;
+    background: linear-gradient(90deg, #ff9900, #ffcc00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.checkout-button {
+    background: linear-gradient(90deg, black, gold);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+
+.checkout-button:hover {
+    box-shadow: 0 4px 10px rgba(255, 215, 0, 0.8);
+}
+
+.checkout-button:active {
+    transform: scale(0.95);
+}
+
+/* ========== 登录页面（Login） ========== */
+
+/* 登录框 */
+.login-box {
+    width: 350px;
+    margin: auto;
+    padding: 20px;
+    background: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* 输入框 */
+.login-box input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    transition: border-color 0.3s ease;
+}
+
+.login-box input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* 登录按钮 */
+.login-box .login-button {
+    background: linear-gradient(90deg, #0056b3, #003580);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.login-box .login-button:hover {
+    background: linear-gradient(90deg, #003580, #002060);
+}
+
+.login-box .login-button:active {
+    transform: scale(0.95);
+}
+
+/* ========== 响应式设计 ========== */
+
+@media (max-width: 768px) {
+    .product-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cart-item {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .login-box {
+        width: 90%;
+    }
+}
+
+/* ========== 动态星空背景 ========== */
+body {
+    background: black;
+    overflow: hidden;
+    position: relative;
+}
+
+.stars {
+    width: 100%;
+    height: 100%;
+    background: url('stars.png'); /* 你可以换成动态 JS 生成 */
+    animation: star-move 20s linear infinite;
+}
+
+@keyframes star-move {
+    from { background-position: 0 0; }
+    to { background-position: -1000px 1000px; }
+}
+/* 星空容器 */
+.star-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    pointer-events: none; /* 不影响鼠标点击 */
+    z-index: -1; /* 让星星在页面背景 */
+}
+
+/* 星星样式 */
+.star {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+}
+
+/* 星星闪烁动画 */
+@keyframes twinkle {
+    0% { opacity: 0.3; }
+    100% { opacity: 1; }
+}
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none; /* 避免影响鼠标点击 */
+    z-index: -1; /* 让它在所有内容下方 */
+}
+/* ========== 导航栏（Navbar） ========== */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    background: linear-gradient(to right, black, rgba(0, 0, 0, 0.8));
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 9999;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+nav a {
+    color: gold;  /* 变金色 */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    margin: 0 20px;  /* 增加间距 */
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: white; /* 悬停变白色 */
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
+}
+
+#search {
+    width: 200px;
+    height: 30px;
+    border: 2px solid gold;
+    border-radius: 15px;
+    padding-left: 10px;
+    font-size: 16px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+#search::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+.products-container {
+    display: flex;
+    justify-content: center;  /* 水平居中 */
+    flex-wrap: wrap;  /* 自动换行 */
+    gap: 20px;  /* 设置间距 */
+    max-width: 1200px;  /* 最大宽度 */
+    margin: 0 auto;  /* 居中 */
+    padding: 20px;
+}
+
+.product {
+    width: 250px;  /* 固定商品宽度 */
+    background: rgba(255, 255, 255, 0.1);  /* 半透明背景 */
+    border-radius: 10px;  /* 圆角 */
+    padding: 10px;
+    text-align: center;  /* 文字居中 */
+    transition: transform 0.3s ease;
+}
+
+.product:hover {
+    transform: scale(1.05);  /* 悬停时放大 */
+}
+/* 让商品容器居中，并调整布局 */
+.products-container {
+    display: flex;
+    flex-wrap: wrap;  /* 允许换行 */
+    justify-content: center;  /* 居中对齐 */
+    gap: 20px;  /* 间距 */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 调整单个商品样式 */
+.product {
+    width: 250px;  /* 统一宽度 */
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+/* 限制商品图片大小 */
+.product img {
+    width: 100%;
+    height: auto;
+    max-height: 180px;  /* 限制高度 */
+    object-fit: cover;  /* 保证图片不会变形 */
+}
+
+/* 让整个 main 居中 */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* 购物车 (cart.html) - 白色 → 淡黄色 */
+.cart-page {
+    background: linear-gradient(135deg, #ffffff, #fdf4c9);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Poppins", sans-serif;
+}
+
+/* 登录 & 注册 (login.html, register.html) - 白色 → 浅蓝色 */
+.auth-page {
+    background: linear-gradient(135deg, #ffffff, #c9e4ff);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Poppins", sans-serif;
+}
+/* 产品名称优化 */
+.product-name {
+    font-size: 20px; /* 放大字号 */
+    font-weight: bold; /* 加粗 */
+    text-align: center;
+    color: #FFD700; /* 金色，更符合主题 */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* 产品价格优化 */
+.product-price {
+    font-size: 22px; /* 更大字体 */
+    font-weight: bold;
+    text-align: center;
+    background: linear-gradient(to right, #ff8c00, #ff4500); /* 渐变色（橙红→深橙） */
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* 购物按钮优化 */
+.add-to-cart {
+    background: linear-gradient(to right, #007bff, #0056b3);
+    color: white;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.add-to-cart:hover {
+    background: linear-gradient(to right, #0056b3, #004494);
+    transform: scale(1.05);
+}
+
+.add-to-cart:active {
+    transform: scale(0.95);
+}
