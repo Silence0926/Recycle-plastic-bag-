@@ -78,7 +78,7 @@ h1 {
 /* Logo 文字 */
 .logo {
     font-size: 2.5rem;
-    font-family: Brush Script MT, Brush Script Std, cursive；
+    font-family: Brush Script MT, Brush Script Std, cursive;
     background: linear-gradient(45deg, gold, orange, gold);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -221,7 +221,7 @@ h1 {
 /* ========== 动态星空背景 ========== */
 body {
     background: black;
-    overflow-x: hidden;
+    overflow-x: auto;
     overflow-y: auto;
     position: relative;
 }
@@ -242,7 +242,7 @@ body {
     position: fixed;
     width: 100%;
     height: 100%;
-   overflow-x: hidden;
+   overflow-x: auto;
     overflow-y: auto;
     top: 0;
     left: 0;
