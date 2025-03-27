@@ -221,7 +221,8 @@ h1 {
 /* ========== 动态星空背景 ========== */
 body {
     background: black;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
     position: relative;
 }
 
