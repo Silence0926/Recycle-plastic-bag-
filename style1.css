@@ -78,7 +78,7 @@ h1 {
 /* Logo 文字 */
 .logo {
     font-size: 2.5rem;
-    font-family: "Vongola", sans-serif;
+    font-family: Brush Script MT, Brush Script Std, cursive；
     background: linear-gradient(45deg, gold, orange, gold);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
