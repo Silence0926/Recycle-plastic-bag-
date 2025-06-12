@@ -5,6 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ASSIGNMENT</title>
     <link rel="stylesheet" href="style1.css">
+    <style>
+        /* 自定义语言选择器样式 */
+        #lang-select {
+            padding: 6px 12px;
+            margin-left: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            background-color: #fff;
+            color: #333;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        /* 隐藏 Google 原始翻译栏 */
+        .goog-te-banner-frame.skiptranslate,
+        #goog-gt-tt,
+        .goog-te-balloon-frame {
+            display: none !important;
+        }
+
+        body {
+            top: 0px !important;
+        }
+
+        .goog-logo-link, .goog-te-gadget {
+            display: none !important;
+        }
+    </style>
 </head>
 <body>
     <header class="navbar">
@@ -18,9 +47,14 @@
             <a href="intro.html" id="intro-link">INTRO</a>
         </nav>
         <input type="text" id="search" placeholder="SEARCH">
-
-        <!-- ✅ 语言切换器插入点 -->
-        <div id="google_translate_element" style="margin-left: 20px;"></div>
+        <!-- 美观语言选择器 -->
+        <select id="lang-select">
+            <option value="">🌐 Language</option>
+            <option value="zh-CN">🇨🇳 中文</option>
+            <option value="en">🇬🇧 English</option>
+            <option value="ms">🇲🇾 Malay</option>
+        </select>
+        <div id="google_translate_element" style="display:none;"></div>
     </header>
 
     <main>
@@ -46,15 +80,15 @@
             </div>
         </div>
     </main>
-    
+
     <footer>
         <p>&copy; 2025 电子商店. 保留所有权利.</p>
     </footer>
-    
+
     <script src="script.js"></script>
     <script src="stars.js"></script>
 
-    <!-- ✅ Google Translate 脚本 -->
+    <!-- Google Translate -->
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
@@ -63,6 +97,25 @@
                 layout: google.translate.TranslateElement.InlineLayout.SIMPLE
             }, 'google_translate_element');
         }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const langSelect = document.getElementById("lang-select");
+            langSelect.addEventListener("change", function () {
+                const lang = this.value;
+                if (lang) {
+                    const iframe = document.querySelector('iframe.goog-te-menu-frame');
+                    if (iframe) {
+                        const innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+                        const langLinks = innerDoc.querySelectorAll('.goog-te-menu2-item span.text');
+                        langLinks.forEach(function (el) {
+                            if (el.innerText.toLowerCase().includes(lang.toLowerCase())) {
+                                el.click();
+                            }
+                        });
+                    }
+                }
+            });
+        });
     </script>
     <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
