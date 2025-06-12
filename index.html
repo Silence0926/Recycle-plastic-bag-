@@ -8,19 +8,21 @@
 </head>
 <body>
     <header class="navbar">
-    <div class="logo">
-        <img src="RB.png" alt="RPB Emblem" class="logo-img">
-        <span class="logo-text">NLB</span>
-    </div>
-    <nav>
-        <a href="index.html">HOME</a>
-        <a href="cart.html" id="cart-link">CART</a>
-        <a href="intro.html" id="intro-link">INTRO</a>
-    </nav>
-    <input type="text" id="search" placeholder="SEARCH">
-</header>
+        <div class="logo">
+            <img src="RB.png" alt="RPB Emblem" class="logo-img">
+            <span class="logo-text">NLB</span>
+        </div>
+        <nav>
+            <a href="index.html">HOME</a>
+            <a href="cart.html" id="cart-link">CART</a>
+            <a href="intro.html" id="intro-link">INTRO</a>
+        </nav>
+        <input type="text" id="search" placeholder="SEARCH">
 
-    
+        <!-- ✅ 语言切换器插入点 -->
+        <div id="google_translate_element" style="margin-left: 20px;"></div>
+    </header>
+
     <main>
         <h1>WELCOME TO THE BEST WORLD!</h1>
         <div class="products-container">
@@ -51,5 +53,17 @@
     
     <script src="script.js"></script>
     <script src="stars.js"></script>
+
+    <!-- ✅ Google Translate 脚本 -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'zh-CN',
+                includedLanguages: 'en,zh-CN,ms',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
