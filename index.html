@@ -1,122 +1,109 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ASSIGNMENT</title>
-    <link rel="stylesheet" href="style1.css">
-    <style>
-        /* 自定义语言选择器样式 */
-        #lang-select {
-            padding: 6px 12px;
-            margin-left: 20px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            font-family: 'Poppins', sans-serif;
-            background-color: #fff;
-            color: #333;
-            font-size: 14px;
-            cursor: pointer;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ASSIGNMENT</title>
+  <link rel="stylesheet" href="style1.css" />
+  <style>
+    #lang-select {
+      padding: 6px 12px;
+      border-radius: 8px;
+      margin-left: 20px;
+      font-size: 14px;
+      cursor: pointer;
+    }
 
-        /* 隐藏 Google 原始翻译栏 */
-        .goog-te-banner-frame.skiptranslate,
-        #goog-gt-tt,
-        .goog-te-balloon-frame {
-            display: none !important;
-        }
-
-        body {
-            top: 0px !important;
-        }
-
-        .goog-logo-link, .goog-te-gadget {
-            display: none !important;
-        }
-    </style>
+    /* 隐藏谷歌工具栏 */
+    .goog-te-banner-frame.skiptranslate,
+    #goog-gt-tt,
+    .goog-te-balloon-frame {
+      display: none !important;
+    }
+    body {
+      top: 0px !important;
+    }
+    .goog-logo-link, .goog-te-gadget {
+      display: none !important;
+    }
+  </style>
 </head>
 <body>
-    <header class="navbar">
-        <div class="logo">
-            <img src="RB.png" alt="RPB Emblem" class="logo-img">
-            <span class="logo-text">NLB</span>
-        </div>
-        <nav>
-            <a href="index.html">HOME</a>
-            <a href="cart.html" id="cart-link">CART</a>
-            <a href="intro.html" id="intro-link">INTRO</a>
-        </nav>
-        <input type="text" id="search" placeholder="SEARCH">
-        <!-- 美观语言选择器 -->
-        <select id="lang-select">
-            <option value="">🌐 Language</option>
-            <option value="zh-CN">🇨🇳 中文</option>
-            <option value="en">🇬🇧 English</option>
-            <option value="ms">🇲🇾 Malay</option>
-        </select>
-        <div id="google_translate_element" style="display:none;"></div>
-    </header>
+  <header class="navbar">
+    <div class="logo">
+      <img src="RB.png" alt="RPB Emblem" class="logo-img" />
+      <span class="logo-text">NLB</span>
+    </div>
+    <nav>
+      <a href="index.html">HOME</a>
+      <a href="cart.html" id="cart-link">CART</a>
+      <a href="intro.html" id="intro-link">INTRO</a>
+    </nav>
+    <input type="text" id="search" placeholder="SEARCH" />
 
-    <main>
-        <h1>WELCOME TO THE BEST WORLD!</h1>
-        <div class="products-container">
-            <div class="product">
-                <img src="product1.jpg" alt="Small Bag">
-                <p class="product-name">Small Bag</p>
-                <p class="product-price">RM20.00</p>
-                <button class="add-to-cart">ADD TO CART</button>
-            </div>
-            <div class="product">
-                <img src="product2.jpg" alt="Medium Bag">
-                <p class="product-name">Medium Bag</p>
-                <p class="product-price">RM40.00</p>
-                <button class="add-to-cart">ADD TO CART</button>
-            </div>
-            <div class="product">
-                <img src="product3.jpg" alt="Large Bag">
-                <p class="product-name">Large Bag</p>
-                <p class="product-price">RM79.99</p>
-                <button class="add-to-cart">ADD TO CART</button>
-            </div>
-        </div>
-    </main>
+    <!-- 美观语言选择 -->
+    <select id="lang-select">
+      <option value="">🌐 Language</option>
+      <option value="zh-CN">🇨🇳 中文</option>
+      <option value="en">🇬🇧 English</option>
+      <option value="ms">🇲🇾 Malay</option>
+    </select>
+  </header>
 
-    <footer>
-        <p>&copy; 2025 电子商店. 保留所有权利.</p>
-    </footer>
+  <main>
+    <h1>WELCOME TO THE BEST WORLD!</h1>
+    <div class="products-container">
+      <div class="product">
+        <img src="product1.jpg" alt="Small Bag" />
+        <p class="product-name">Small Bag</p>
+        <p class="product-price">RM20.00</p>
+        <button class="add-to-cart">ADD TO CART</button>
+      </div>
+      <div class="product">
+        <img src="product2.jpg" alt="Medium Bag" />
+        <p class="product-name">Medium Bag</p>
+        <p class="product-price">RM40.00</p>
+        <button class="add-to-cart">ADD TO CART</button>
+      </div>
+      <div class="product">
+        <img src="product3.jpg" alt="Large Bag" />
+        <p class="product-name">Large Bag</p>
+        <p class="product-price">RM79.99</p>
+        <button class="add-to-cart">ADD TO CART</button>
+      </div>
+    </div>
+  </main>
 
-    <script src="script.js"></script>
-    <script src="stars.js"></script>
+  <footer>
+    <p>&copy; 2025 电子商店. 保留所有权利.</p>
+  </footer>
 
-    <!-- Google Translate -->
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({
-                pageLanguage: 'zh-CN',
-                includedLanguages: 'en,zh-CN,ms',
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-            }, 'google_translate_element');
-        }
+  <script src="script.js"></script>
+  <script src="stars.js"></script>
 
-        document.addEventListener("DOMContentLoaded", function () {
-            const langSelect = document.getElementById("lang-select");
-            langSelect.addEventListener("change", function () {
-                const lang = this.value;
-                if (lang) {
-                    const iframe = document.querySelector('iframe.goog-te-menu-frame');
-                    if (iframe) {
-                        const innerDoc = iframe.contentDocument || iframe.contentWindow.document;
-                        const langLinks = innerDoc.querySelectorAll('.goog-te-menu2-item span.text');
-                        langLinks.forEach(function (el) {
-                            if (el.innerText.toLowerCase().includes(lang.toLowerCase())) {
-                                el.click();
-                            }
-                        });
-                    }
-                }
-            });
-        });
-    </script>
-    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <!-- Google Translate 脚本 -->
+  <div id="google_translate_element" style="display:none;"></div>
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'zh-CN',
+        includedLanguages: 'en,zh-CN,ms',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
+    }
+  </script>
+  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+  <!-- 切换语言：跳转到 Google 翻译 URL -->
+  <script>
+    document.getElementById("lang-select").addEventListener("change", function () {
+      const lang = this.value;
+      if (lang) {
+        const baseUrl = window.location.origin + window.location.pathname;
+        window.location.href =
+          `https://translate.google.com/translate?sl=auto&tl=${lang}&u=${encodeURIComponent(baseUrl)}`;
+      }
+    });
+  </script>
 </body>
 </html>
